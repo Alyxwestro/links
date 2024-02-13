@@ -18,7 +18,7 @@ img{
     z-index:-1;
 }
 
-h1{
+.frontpage{
     font-family: var(--typography--header);
     font-size: calc(var(--font-size)*8);
     text-align: center;
@@ -26,9 +26,11 @@ h1{
     color: rgba(0,0,0,0.1);
 }
 
-h1:hover{
+.frontpage:hover{
     color: white;
 }
+
+
 
 ul{
     list-style-type: none;
