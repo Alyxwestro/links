@@ -14,7 +14,7 @@ let channelSlug = 'cozy-night-in' // The “slug” is just the end of the URL
 // First, let’s lay out some *functions*, starting with our basic metadata:
 let placeChannelInfo = (data) => {
 	// Target some elements in your HTML:
-	let channelTitle = document.getElementById('channel-title')
+	let channelTitle = document.getElementById('channel-title') 
 	let channelDescription = document.getElementById('channel-description')
 	let channelCount = document.getElementById('channel-count')
 	let channelLink = document.getElementById('channel-link')
@@ -45,7 +45,6 @@ let renderBlock = (block) => {
 					<img src="${ block.image.original.url }">
 				</picture>
 				<h3>${ block.title }</h3>
-				${ block.description_html }
 				<p><a href="${ block.source.url }">See the original ↗</a></p>
 			</li>
 			`
@@ -54,7 +53,20 @@ let renderBlock = (block) => {
 
 	// Images!
 	else if (block.class == 'Image') {
-		// …up to you!
+        let ImageItem =
+		`
+        <li>
+            <p><em>Image</em></p>
+            <picture>
+                    <source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
+					<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
+					<img src="${ block.image.original.url }">
+            </picture>
+            <h3>${ block.title }</h3>
+				<p><a href="${ block.source.url }">See the original ↗</a></p>
+        </li>
+        `
+        channelBlocks.insertAdjacentHTML('beforeend', ImageItem)
 	}
 
 	// Text!
