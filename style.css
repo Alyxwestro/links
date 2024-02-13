@@ -1,63 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/* These styles are just to make it easier to see the blocks, initially. */
 
-:root{
-    --typography--header: 'Roboto', sans-serif;
-    --font--display: 'Lato', sans-serif;
+body {
+	--spacing: 2em;
 
-    --spacing: 20px;
-    --font-size: 18px;
-    --scale: 2;
-    --baseline: 26px;
-
+	font-family: monospace;
+	padding: var(--spacing);
 }
 
-img{
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    z-index:-1;
+body, header, section, ul, li, footer, address {
+	display: grid;
+	gap: var(--spacing);
 }
 
-.frontpage{
-    font-family: var(--typography--header);
-    font-size: calc(var(--font-size)*8);
-    text-align: center;
-    padding-top: 400px;
-    color: rgba(0,0,0,0.1);
-}
+main { max-width: 600px }
 
-.frontpage:hover{
-    color: white;
-}
-
-
-
-ul{
-    list-style-type: none;
-    margin-top: calc(1.5*var(--spacing)); 
-    margin-left: calc(1.5*var(--spacing));
-    background-color: rgba(0,0,0,0.3);
-    border-radius: 10px;
-    width: fit-content;
-    padding: 7px;
-
-}
-
-li{
-    display: inline;
-    padding-top: 10px;
-    padding-right: var(--spacing);
-    padding-left: var(--spacing);
-    font-size: var(--font-size);
-    font-family: var(--font--display);
-}
-
-.grid-container{
-    display: grid;
-    grid-template-columns: 20% 20% 20% 20% 20%;
-}
-
-.grid-item{
-    border: 1px solid black;
-    padding: var(--spacing);
-}
+a { color: blue; }
+em { font-style: italic; }
+strong { font-weight: bold; }
+p { max-width: 50ch; }
