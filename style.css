@@ -1,20 +1,49 @@
 /* These styles are just to make it easier to see the blocks, initially. */
-
-body {
-	--spacing: 2em;
-
-	font-family: monospace;
-	padding: var(--spacing);
+:root {
+	--gap: 1rem;
 }
 
-body, header, section, ul, li, footer, address {
-	display: grid;
-	gap: var(--spacing);
+main {
+	display: flex;
+	flex-direction: column;
+	gap: var(--gap);
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: var(--gap);
 }
 
-main { max-width: 600px }
+section {
+	display: flex;
+	flex-direction: column;
+	gap: var(--gap);
+}
+strong{
+	font-weight: bold;
+}
 
-a { color: blue; }
-em { font-style: italic; }
-strong { font-weight: bold; }
-p { max-width: 50ch; }
+.date{
+	font-family: 'Courier New', Courier, monospace;
+}
+
+.block--link{
+	color: blue;
+}
+
+.block--text{
+	color: green;
+}
+
+.block--text blockquote + p{
+	color: red;
+}
+
+.block--text title{
+	margin-top: 1em;
+}
+
+aside{
+	opacity: 50%;
+}
+p+p{
+	margin-top: 1em;
+}

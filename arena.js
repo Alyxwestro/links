@@ -37,7 +37,7 @@ let renderBlock = (block) => {
 	if (block.class == 'Link') {
 		let linkItem =
 			`
-			<li>
+			<li class="block block--link">
 				<p><em>Link</em></p>
 				<picture>
 					<source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
@@ -45,6 +45,7 @@ let renderBlock = (block) => {
 					<img src="${ block.image.original.url }">
 				</picture>
 				<h3>${ block.title }</h3>
+				<p class="date>$block.created_at}/p>
 				<p><a href="${ block.source.url }">See the original ↗</a></p>
 			</li>
 			`
@@ -55,10 +56,11 @@ let renderBlock = (block) => {
 	else if (block.class == 'Image') {
         let ImageItem =
             `
-            <li>
+            <li class="block block--image">
                 <p><em>Image</em></p>
                 <figure>
-					<img src="${block.image.large.url}"alt="${block.title}">
+					<img src="${block.image.large.url}"alt="${block.title} by ${block.user.full_name}">
+					<figcaption>${block.title}</figcaption>
                 </figure>
                 <h3>${ block.title }</h3>
             </li>
@@ -70,13 +72,16 @@ let renderBlock = (block) => {
 	else if (block.class == 'Text') {
 		let TextItem =
 		`
-			<li>
-				<p><em>Text</em></p>
-				<h3>
+			<li class="block block--text">
+				<p><em>Text</em></p>				
 					${block.content_html}
-				</h3>
+					<div class="title">
+					${block.title}
+					</div>
+				
 			</li>
 		`
+		let textblocks = document.getElmentBylId('text-blocks')
 		channelBlocks.insertAdjacentHTML('beforeend', TextItem)
 	}
 
@@ -103,14 +108,35 @@ let renderBlock = (block) => {
 		else if (attachment.includes('pdf')) {
 			let pdfItem =
 			`
-			<li>
-				<p><em>PDF</em></p>
-				<figure>
-					<a href="${block.attachment.url}" alt="${block.title}">
-					<img src="${block.image.large.url}" alt="${block.title}">
-				</figure>
+			<li class="block block--pdf"> 
+				<a href="${block.attachment.url}">
+					<p><em>PDF</em></p>
+					<figure>
+						<img src="${block.image.large.url}" alt="${block.title}">
+						<figcaption>
+							${block.title}
+							<div class="description">
+								${block.description}
+							</div>
+						</figcaption>
+					</figure>
 			</li>
 			`
+			if (block.description == null){
+				pdfItem =
+				`
+				<li class="block block--pdf"> 
+					<a href="${block.attachment.url}">
+						<p><em>PDF</em></p>
+						<figure>
+							<img src="${block.image.large.url}" alt="${block.title}">
+							<figcaption>
+								${block.title}
+							</figcaption>
+						</figure>
+				</li>
+				`
+			}
 			channelBlocks.insertAdjacentHTML('beforeend', pdfItem);
 		}
 
