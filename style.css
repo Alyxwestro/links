@@ -1,17 +1,45 @@
-/* These styles are just to make it easier to see the blocks, initially. */
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Taviraj:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root {
-	--gap: 1rem;
+	--typography--header:'Oxygen', sans-serif;
+	--font--text:'Taviraj', serif;  
+	--font--display:'Roboto', sans-serif;
+
+	--gap: 1rem; 
+	--font-size: 18px;
+	--scale: 2;
+	--gutter: 26px;
 }
 
-main {
-	display: flex;
-	flex-direction: column;
-	gap: var(--gap);
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: var(--gap);
-	font-family: monospace;
+/* Navigation Bar */
+.navigationbar{
+	font-family: var(--typography--header);
+	font-weight: 500;
+	font-size: var(--font-size);
+	margin-top: 10px;	
+	background-color: rgba(0,0,0,0.1);
+	border-radius: 3px;
+	text-align: center;	
 }
+
+a{
+	margin: var(--gutter);
+	padding-right:var(--gutter);
+	padding: 7px;
+}
+
+
+/* Contents Blocks */
+main {
+	max-width: 1200px;
+	font-family: var(--font--display);
+	font-size: var(--font-size);
+	font-weight: 400;
+	margin: var(--gutter);
+	margin-top: 200px;
+}
+
+
 
 section {
 	display: flex;
