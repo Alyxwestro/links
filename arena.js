@@ -59,10 +59,9 @@ let renderBlock = (block) => {
             <li class="block block--image">
                 <p><em>Image</em></p>
                 <figure>
-					<img src="${block.image.large.url}"alt="${block.title} by ${block.user.full_name}">
-					<figcaption>${block.title}</figcaption>
+					<img src="${block.image.large.url}"alt="${block.title} by ${block.user.author}">
                 </figure>
-                <h3>${ block.title }</h3>
+               
             </li>
             `
         channelBlocks.insertAdjacentHTML('beforeend', ImageItem)
@@ -74,14 +73,13 @@ let renderBlock = (block) => {
 		`
 			<li class="block block--text">
 				<p><em>Text</em></p>				
+				<blockquote>
 					${block.content_html}
-					<div class="title">
-					${block.title}
-					</div>
+				</blockquote>
+				<h3>${ block.title }</h3>	
 				
 			</li>
 		`
-		let textblocks = document.getElmentBylId('text-blocks')
 		channelBlocks.insertAdjacentHTML('beforeend', TextItem)
 	}
 
@@ -94,7 +92,7 @@ let renderBlock = (block) => {
 			// …still up to you, but we’ll give you the `video` element:
 			let videoItem =
 				`
-				<li>
+				<li class="block block--video">
 					<p><em>Video</em></p>
 					<video controls src="${ block.attachment.url }"></video>
 				</li>

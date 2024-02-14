@@ -10,6 +10,7 @@ main {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: var(--gap);
+	font-family: monospace;
 }
 
 section {
@@ -19,6 +20,10 @@ section {
 }
 strong{
 	font-weight: bold;
+}
+
+h3 a em{
+	color: red;
 }
 
 .date{
