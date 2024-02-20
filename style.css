@@ -23,7 +23,7 @@ body{
 	background-size: 15px 15px;
 }
 
-/* homepage grid  */
+/* HOMEPAGE GRID  */
 h1, aside{
 	display: none;
 }
@@ -61,7 +61,7 @@ h1, aside{
 
 
 
-/* radio channel  */
+/* RADIO CHANNEL  */
 .player{
 	position:fixed;
 	background-color:#E0E0DE;
