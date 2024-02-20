@@ -47,10 +47,18 @@ h1, aside{
 }
 
 .block--image{
-	width: 100%;
-    height: 100%;
+	width: auto;
+    height: auto;  
+}
+
+.block--pdf{
     object-fit: contain;
 }
+
+.blank{
+	height:200px;
+}
+
 
 
 /* radio channel  */
@@ -99,13 +107,13 @@ h3{
 	position: absolute;
 	left: 50%;
 	transform: translateX( -50% );
-	top:7px;
+	top: -15%;
 }
 
 .about{
 	position: absolute;
-	left: 90px;
-	top: 70px;
+	left: -33%;
+	top: 25%;
 }
 
 h3:hover{
@@ -114,8 +122,9 @@ h3:hover{
 
 .gridcore{
 	position: absolute;
-	left: 270px;
-	top: 158px;
+	flex-direction: column; 
+	left: 94%;
+	top: 85%;
 }
 
 
@@ -131,13 +140,13 @@ h3:hover{
 	}
 
 	/* RADIO CHANNEL */
-	.about{
+	/* .about{
 		left: 260px;
 	}
 
 	.gridcore{
 		left: 440px;
-	}
+	} */
 
 }
 
@@ -152,12 +161,12 @@ h3:hover{
 	}
 
 	/* RADIO CHANNEL */
-	.about{
+	/* .about{
 		left: 390px;
 	}
 
 	.gridcore{
 		left: 570px;
-	}
+	} */
 }
 
