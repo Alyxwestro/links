@@ -9,7 +9,7 @@ img{
  }
  
 p{
-     font-size: 50px;
+     font-size: 60px;
      font-family: 'Taviraj', serif;
      text-transform: uppercase;
      font-weight: 100;
@@ -17,7 +17,7 @@ p{
      text-align: center;
      color: rgba(0,0,0,0.1);
      word-spacing: 10px;
-     padding-top: 200px;
+     padding-top: 300px;
  }
  
 a:hover{
