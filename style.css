@@ -139,15 +139,6 @@ h3:hover{
 		margin-right: calc(var(--scale)*var(--spacing));
 	}
 
-	/* RADIO CHANNEL */
-	/* .about{
-		left: 260px;
-	}
-
-	.gridcore{
-		left: 440px;
-	} */
-
 }
 
 /* DESKTOP VERSION */
@@ -160,13 +151,5 @@ h3:hover{
 		margin-right: calc(10*var(--spacing));
 	}
 
-	/* RADIO CHANNEL */
-	/* .about{
-		left: 390px;
-	}
-
-	.gridcore{
-		left: 570px;
-	} */
 }
 
