@@ -181,7 +181,28 @@ let renderUser = (user, container) => { // You can have multiple arguments for a
 	container.insertAdjacentHTML('beforeend', userAddress)
 }
 
+// let addScrolling = () => {
+// 	let highlightClass = 'highlight' // Variables again.
+// 	let highlightBlocks = document.querySelectorAll('.block') // Get all of them.
 
+// 	// Loop through the list, doing this `forEach` one.
+// 	highlightBlocks.forEach((block) => {
+// 			let sectionObserver = new IntersectionObserver((entries) => {
+// 				let [entry] = entries;
+
+// 				if (entry.isIntersecting) {
+// 						block.classList.add(highlightClass)
+// 					} else {
+// 						block.classList.remove(highlightClass)
+// 				}
+// 			}, {
+// 				root:document,
+// 				rootMargin: '-33% 0% -0% 0%', // CSS-ish: top/right/bottom/left.
+// 	})
+
+// 	sectionObserver.observe(block) // Watch each one!
+// })
+// }
 
 // Now that we have said what we can do, go get the data:
 fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`,{ cache: 'no-store' })
@@ -200,4 +221,6 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`,{ cache: 'no-store
 		let channelUsers = document.getElementById('channel-users') // Show them together
 		data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
 		renderUser(data.user, channelUsers)
+
+		// addScrolling();
 	})
