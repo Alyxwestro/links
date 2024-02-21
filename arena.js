@@ -224,3 +224,5 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`,{ cache: 'no-store
 
 		// addScrolling();
 	})
+
+	block.onclick = functional () 
