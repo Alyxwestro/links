@@ -21,8 +21,8 @@ let placeChannelInfo = (data) => {
 	// Then set their content/attributes to our data:
 	channelTitle.innerHTML = data.title
 	channelDescription.innerHTML = window.markdownit().render(data.metadata.description) // Converts Markdown → HTML
-	//channelCount.innerHTML = data.length
-	//channelLink.href = `https://www.are.na/channel/${channelSlug}`
+	// channelCount.innerHTML = data.length
+	// channelLink.href = `https://www.are.na/channel/${channelSlug}`
 }
 
 
@@ -222,7 +222,6 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`,{ cache: 'no-store
 		data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
 		renderUser(data.user, channelUsers)
 
-		// addScrolling();
 	})
 
-	block.onclick = functional () 
+	// block.onclick = functional () 
