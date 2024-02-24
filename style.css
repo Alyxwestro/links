@@ -31,7 +31,7 @@ h1, h2, aside{
 
 .channelblocks {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: repeat(1, 1fr);
 	border: 1px solid #1E1E1E;
 	background-color: #1E1E1E;
 	gap:var(--gap);
