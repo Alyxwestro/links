@@ -48,9 +48,11 @@ h1, h2, aside{
 }
 
 .block--pdf .block--video{
-    object-fit: contain;
-	height: auto;
-	width: 100%;
+    position: relative;
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+	overflow: hidden;
 }
 
 .block--text{

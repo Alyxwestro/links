@@ -174,17 +174,17 @@ let renderBlock = (block) => {
 
 
 // It‘s always good to credit your work:
-let renderUser = (user, container) => { // You can have multiple arguments for a function!
-	let userAddress =
-		`
-		<address>
-			<img src="${ user.avatar_image.display }">
-			<h3>${ user.first_name }</h3>
-			<p><a href="https://are.na/${ user.slug }">Are.na profile ↗</a></p>
-		</address>
-		`
-	container.insertAdjacentHTML('beforeend', userAddress)
-}
+// let renderUser = (user, container) => { // You can have multiple arguments for a function!
+// 	let userAddress =
+// 		`
+// 		<address>
+// 			<img src="${ user.avatar_image.display }">
+// 			<h3>${ user.first_name }</h3>
+// 			<p><a href="https://are.na/${ user.slug }">Are.na profile ↗</a></p>
+// 		</address>
+// 		`
+// 	container.insertAdjacentHTML('beforeend', userAddress)
+// }
 
 // let addScrolling = () => {
 // 	let highlightClass = 'highlight' // Variables again.
@@ -223,9 +223,9 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`,{ cache: 'no-store
 		})
 
 		// Also display the owner and collaborators:
-		let channelUsers = document.getElementById('channel-users') // Show them together
-		data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
-		renderUser(data.user, channelUsers)
+		// let channelUsers = document.getElementById('channel-users') // Show them together
+		// data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
+		// renderUser(data.user, channelUsers)
 
 	})
 
