@@ -49,6 +49,8 @@ h1, h2, aside{
 
 .block--pdf .block--video{
     object-fit: contain;
+	height: auto;
+	width: 100%;
 }
 
 .block--text{

@@ -126,7 +126,7 @@ let renderBlock = (block) => {
 			// …still up to you, but here’s an `audio` element:
 			let audioItem =
 				`
-				<li>
+				<li li class="block block--audio">
 					<audio controls src="${ block.attachment.url }"></audio>
 				</li>
 				`
@@ -141,14 +141,12 @@ let renderBlock = (block) => {
 		let embed = block.embed.type
 
 
-
-
 	// Linked video!
 		if (embed.includes('video')) {
 			// …still up to you, but here’s an example `iframe` element:
 			let linkedVideoItem =
 				`
-				<li>
+				<li class="block block--video">
 					${ block.embed.html }
 				</li>
 				`
@@ -162,6 +160,13 @@ let renderBlock = (block) => {
 	// Linked audio!
 		else if (embed.includes('rich')) {
 			// …up to you!
+			let richItem =
+			`
+				<li li class="block block--rich">
+					${ block.embed.html }
+				</li>
+			`
+			channelBlocks.insertAdjacentHTML('beforeend', richItem)
 		}
 	}
 }
