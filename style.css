@@ -41,18 +41,10 @@ h1, h2, aside{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	aspect-ratio: 1 / 1;
+	aspect-ratio: 1 / 1;	
 	overflow: hidden;
 	background-color: #E0E0DE;
     padding: 7px;
-}
-
-.block--pdf .block--video{
-    position: relative;
-	display: flex;
-  	justify-content: center;
-  	align-items: center;
-	overflow: hidden;
 }
 
 .block--text{
@@ -119,7 +111,7 @@ h3{
 
 .about{
 	position: absolute;
-	left: -33%;
+	left: 105%;
 	top: 25%;
 }
 
@@ -130,7 +122,7 @@ h3:hover{
 .gridcore{
 	position: absolute;
 	flex-direction: column; 
-	left: 94%;
+	left: -34%;
 	top: 85%;
 }
 
@@ -217,14 +209,7 @@ h3:hover{
 		padding-left: 10px;
 		padding-top: 4px;
 	}
-	
-/* ABOUT PAGE */
-	
-
-	
-
-}
-
+}	
 
 /* HOVER EFFECT */
 .block:hover{

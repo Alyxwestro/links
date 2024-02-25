@@ -111,7 +111,7 @@ let renderBlock = (block) => {
         <li class="block block--pdf">
             <figure>
                 <a href="${block.attachment.url}" alt="${block.title}">
-                    <img src="${block.image.large.url}" alt="${block.title}">
+                    <img src="${block.image.large.url}" alt="${block.title}" style="max-inline-size: 75%; transform: translateX( 17% );">
                 </a>
             </figure>
         </li>

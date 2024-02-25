@@ -111,7 +111,7 @@ let renderBlock = (block) => {
         <li class="block block--pdf">
             <figure>
                 <a href="${block.attachment.url}" alt="${block.title}">
-                    <img src="${block.image.large.url}" alt="${block.title}">
+                    <img src="${block.image.large.url}" alt="${block.title}" style="max-inline-size: 75%; transform: translateX( 17% );">
                 </a>
             </figure>
         </li>
@@ -148,10 +148,10 @@ let renderBlock = (block) => {
 			// …still up to you, but here’s an example `iframe` element:
 			let linkedVideoItem =
 			`
-				<li li class="block block--rich">
+				<li class="block block--video">
 					${ block.embed.html }
 				</li>
-			`
+				`
 			channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
 			// More on iframe: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
 		}
@@ -160,8 +160,15 @@ let renderBlock = (block) => {
 
 
 	// Linked audio!
-		else if (embed.includes('rich')) {
-			// …up to you!
+	else if (embed.includes('rich')) {
+		// …up to you!
+		let richItem =
+		`
+			<li li class="block block--rich">
+				${ block.embed.html }
+			</li>
+		`
+		channelBlocks.insertAdjacentHTML('beforeend', richItem)
 		}
 	}
 }
