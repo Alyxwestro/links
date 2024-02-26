@@ -66,28 +66,12 @@ h1, h2, aside{
 }
 
 .block--image__description {
-	position: fixed;
-	top:0;
-	right: 0;
-	left:30%;
-	bottom: 0;
-	/*inset: 2em;
-	width: 90vw;
-	height: 90vh;*/
-	background-color: var(--white);
-	color: var(--black)!;
-	padding: 5%;
-	z-index: 2;
-	transform: unset;
+	background-color: #27f7a4;
 }
 
 .block--image.active .block--image__description {
 	display: block;
 	transform: unset;  
-}
-
-.block--image.active .image-button {
-	z-index: -100;
 }
 
 

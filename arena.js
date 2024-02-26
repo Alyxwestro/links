@@ -56,9 +56,9 @@ let renderBlock = (block) => {
 		let ImageItem =
 		`
 			<li class="block block--image">
-		    	<button class="image-button">
+		    	<figure>
 					<img src="${block.image.large.url}"alt="${block.title} by ${block.author}">
-				</button>
+				</figure>
 
 				<div class="block--image__description">
 					<img src="${ block.image.large.url }" alt="${ block.title } by ${ block.user.full_name }">
@@ -237,14 +237,14 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`,{ cache: 'no-store
 		// data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
 		// renderUser(data.user, channelUsers)
 
-		let openButtons = document.querySelectorAll('.image-button');
+		let openButtons = document.querySelectorAll('.block');
 			openButtons.forEach((openButton) => {
 				openButton.onclick = () => {
 					openButton.parentElement.classList.toggle('active')
 		};
 	})
 
-	let closeButtons = document.querySelectorAll('.image-button');
+	let closeButtons = document.querySelectorAll('.block .close-button');
 		closeButtons.forEach((closeButton) =>{
 			closeButton.onclick = () => {
 				let parentBlock = closeButton.closest('.block')
