@@ -31,7 +31,6 @@ let placeChannelInfo = (data) => {
 let renderBlock = (block) => {
 	// To start, a shared `ul` where we’ll insert all our blocks
 	let channelBlocks = document.getElementById('channel-blocks')
-	console.log (block.class)
 
 
 	// Links!
@@ -53,13 +52,24 @@ let renderBlock = (block) => {
 
 	// Images!
 	else if (block.class == 'Image') {
-		console.log(block)
+		
 		let ImageItem =
 		`
 			<li class="block block--image">
-		    	<figure><img src="${block.image.large.url}"alt="${block.title} by ${block.author}">
-				</figure>
-		</li>
+		    	<button class="image-button">
+					<img src="${block.image.large.url}"alt="${block.title} by ${block.author}">
+				</button>
+
+				<div class="block--image__description">
+					<img src="${ block.image.large.url }" alt="${ block.title } by ${ block.user.full_name }">
+					<figcaption>
+						<h7>${ block.title }</h7>
+						<p>${ block.description_html }</p>
+					</figcaption>
+					<button class="close-button">X</button>
+				</div>
+			</li>
+			
 		`
 		channelBlocks.insertAdjacentHTML('beforeend', ImageItem)
 	}
@@ -68,7 +78,7 @@ let renderBlock = (block) => {
 	
 	// Text!
 	else if (block.class == 'Text') {
-		console.log(block)
+		
 		let textItem =
 			`
 				<li class = "block block--text">
@@ -104,7 +114,7 @@ let renderBlock = (block) => {
 	
  	// Uploaded PDFs!
 	else if (attachment.includes('pdf')) {
-    console.log(block);
+    
 
     let pdfItem = 
 	`
@@ -227,6 +237,24 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`,{ cache: 'no-store
 		// data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
 		// renderUser(data.user, channelUsers)
 
+		let openButtons = document.querySelectorAll('.image-button');
+			openButtons.forEach((openButton) => {
+				openButton.onclick = () => {
+					openButton.parentElement.classList.toggle('active')
+		};
 	})
 
-	// block.onclick = functional () 
+	let closeButtons = document.querySelectorAll('.image-button');
+		closeButtons.forEach((closeButton) =>{
+			closeButton.onclick = () => {
+				let parentBlock = closeButton.closest('.block')
+				parentBlock.classList.toggle('active')
+			}
+		})
+
+
+
+	})
+
+
+	

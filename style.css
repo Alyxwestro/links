@@ -47,6 +47,8 @@ h1, h2, aside{
     padding: 7px;
 }
 
+
+
 .block--text{
 	font-family: var(--font--text);
 	font-weight: 500;
@@ -58,6 +60,7 @@ h1, h2, aside{
 	height:200px;
 }
 
+/* POP UP WINDOW */
 
 
 /* RADIO CHANNEL  */
