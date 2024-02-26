@@ -140,7 +140,7 @@ let renderBlock = (block) => {
 					<audio controls src="${ block.attachment.url }"></audio>
 				</li>
 				`
-			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
+			channelBlocks.insertAdjacentHTML('afterbegin', audioItem)
 			// More on audio: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
 		}
 	}
@@ -160,7 +160,7 @@ let renderBlock = (block) => {
 					${ block.embed.html }
 				</li>
 				`
-			channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
+			channelBlocks.insertAdjacentHTML('afterbegin', linkedVideoItem)
 			// More on iframe: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
 		}
 
@@ -176,7 +176,7 @@ let renderBlock = (block) => {
 					${ block.embed.html }
 				</li>
 			`
-			channelBlocks.insertAdjacentHTML('beforeend', richItem)
+			channelBlocks.insertAdjacentHTML('afterbegin', richItem)
 		}
 	}
 }

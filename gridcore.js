@@ -96,7 +96,7 @@ let renderBlock = (block) => {
 					<video controls src="${ block.attachment.url }"></video>
 				</li>
 				`
-			channelBlocks.insertAdjacentHTML('beforeend', videoItem)
+			channelBlocks.insertAdjacentHTML('afterbegin', videoItem)
 			// More on video, like the `autoplay` attribute:
 			// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
 		}
@@ -126,11 +126,11 @@ let renderBlock = (block) => {
 			// …still up to you, but here’s an `audio` element:
 			let audioItem =
 				`
-				<li class="block block--video">
+				<li class="block block--audio">
 					${ block.embed.html }
 				</li>
 				`
-			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
+			channelBlocks.insertAdjacentHTML('afterbegin', audioItem)
 			// More on audio: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
 		}
 	}
@@ -152,7 +152,7 @@ let renderBlock = (block) => {
 					${ block.embed.html }
 				</li>
 				`
-			channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
+			channelBlocks.insertAdjacentHTML('afterbegin', linkedVideoItem)
 			// More on iframe: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
 		}
 
@@ -168,7 +168,7 @@ let renderBlock = (block) => {
 				${ block.embed.html }
 			</li>
 		`
-		channelBlocks.insertAdjacentHTML('beforeend', richItem)
+		channelBlocks.insertAdjacentHTML('afterbegin', richItem)
 		}
 	}
 }
