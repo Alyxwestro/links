@@ -60,6 +60,7 @@ h1, h2, aside{
 	height:200px;
 }
 
+
 /* POP UP WINDOW */
 .block--image .block--image__description{
 	display: none;
@@ -115,7 +116,7 @@ h1, h2, aside{
 h3{
 	font-family: var(--font--display);
 	font-size: var(--font-size);
-	font-weight: 300;
+	font-weight: 400;
 }
 
 .home{
