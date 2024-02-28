@@ -35,15 +35,27 @@ let renderBlock = (block) => {
 
 	// Links!
 	if (block.class == 'Link') {
-		console.log(block.title) 
 		let linkItem =
 			`
 			<li class="block block--link">
-				<picture>
+				<button class="image-button">
 					<source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
 					<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
 					<img src="${ block.image.original.url }">
-				</picture>
+				</button>
+
+				<div class="block--link__description">
+					<section class="description-body">	
+						<button class="close-button">X</button>	
+						<div class="displayrow">				
+						<a href="${ block.source.url }">
+							<img src="${ block.image.large.url }" alt="${ block.title } by ${ block.user.full_name }">
+						</a>
+						<figcaption>
+							<h7>${ block.title }</h7>
+						</figcaption>
+						</div>						
+					</section>	
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
@@ -56,20 +68,22 @@ let renderBlock = (block) => {
 		let ImageItem =
 		`
 			<li class="block block--image">
-		    	<figure>
+		    	<button class="image-button">
 					<img src="${block.image.large.url}"alt="${block.title} by ${block.author}">
-				</figure>
+				</button>
 
 				<div class="block--image__description">
-					<img src="${ block.image.large.url }" alt="${ block.title } by ${ block.user.full_name }">
-					<figcaption>
-						<h7>${ block.title }</h7>
-						<p>${ block.description_html }</p>
-					</figcaption>
-					<button class="close-button">X</button>
-				</div>
+					<section class="description-body">
+						<button class="close-button">X</button>
+						<div class="displayrow">
+							<img src="${ block.image.large.url }" alt="${ block.title } by ${ block.user.full_name }">
+							<figcaption>
+								<div class="h7">${ block.title }<div>
+							</figcaption>
+						</div>
+					</section>	
+				</div>	
 			</li>
-			
 		`
 		channelBlocks.insertAdjacentHTML('beforeend', ImageItem)
 	}
@@ -82,9 +96,25 @@ let renderBlock = (block) => {
 		let textItem =
 			`
 				<li class = "block block--text">
-					<blockquote>
-						${block.content_html}
-					</blockquote>
+					<button class="image-button">
+						<blockquote >
+							${block.content_html}
+						</blockquote>
+					</button>
+
+					<div class="block--text__description">
+						<section class="description-body">
+							<button class="close-button">X</button>
+							<div class="displayrow">
+							<blockquote >
+								${block.content_html}
+							</blockquote>
+							<figcaption>
+								<h7>${ block.title }</h7>
+							</figcaption>
+							</div>
+						</section>	
+					</div>	
 				</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', textItem)
@@ -102,7 +132,7 @@ let renderBlock = (block) => {
 			// …still up to you, but we’ll give you the `video` element:
 			let videoItem =
 				`
-				<li class = "block block--video">
+				<li>
 					<video controls src="${ block.attachment.url }"></video>
 				</li>
 				`
@@ -119,11 +149,23 @@ let renderBlock = (block) => {
     let pdfItem = 
 	`
         <li class="block block--pdf">
-            <figure>
-                <a href="${block.attachment.url}" alt="${block.title}">
+            <button class="image-button">
                     <img src="${block.image.large.url}" alt="${block.title}" style="max-inline-size: 75%; transform: translateX( 17% );">
-                </a>
-            </figure>
+            </button>
+
+			<div class="block--pdf__description">
+				<section class="description-body">
+					<button class="close-button">X</button>
+					<div class="displayrow">
+					<a href="${block.attachment.url}" alt="${block.title}">
+                    	<img src="${block.image.large.url}" alt="${block.title}" style="max-inline-size: 75%; transform: translateX( 17% );">
+                	</a>
+					<figcaption>
+						<h7>${ block.title }</h7>
+					</figcaption>
+					</div>
+				</section>	
+			</div>	
         </li>
     `
 
@@ -136,7 +178,7 @@ let renderBlock = (block) => {
 			// …still up to you, but here’s an `audio` element:
 			let audioItem =
 				`
-				<li li class="block block--audio">
+				<li>
 					<audio controls src="${ block.attachment.url }"></audio>
 				</li>
 				`
@@ -157,8 +199,24 @@ let renderBlock = (block) => {
 			let linkedVideoItem =
 				`
 				<li class="block block--video">
-					${ block.embed.html }
+					<button class="image-button">
+						<img src="${block.image.large.url}" alt="${block.title}">
+					</button>
+
+					<div class="block--video__description">
+						<section class="description-body">
+							<button class="close-button">X</button>
+							<div class="displayrow">
+							${ block.embed.html }
+							<figcaption>
+								<h7>${ block.title }</h7>
+							</figcaption>
+							</div>
+						</section>	
+					</div>
 				</li>
+
+				
 				`
 			channelBlocks.insertAdjacentHTML('afterbegin', linkedVideoItem)
 			// More on iframe: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
@@ -173,7 +231,21 @@ let renderBlock = (block) => {
 			let richItem =
 			`
 				<li li class="block block--rich">
-					${ block.embed.html }
+					<button class="image-button">
+						<img src="${block.image.large.url}" alt="${block.title}">
+					</button>
+
+					<div class="block--rich__description">
+						<section class="description-body">
+							<button class="close-button">X</button>
+							<div class="displayrow">
+							${ block.embed.html }
+							<figcaption>
+								<h7>${ block.title }</h7>
+							</figcaption>
+							</div>
+						</section>	
+					</div>
 				</li>
 			`
 			channelBlocks.insertAdjacentHTML('afterbegin', richItem)
@@ -181,43 +253,6 @@ let renderBlock = (block) => {
 	}
 }
 
-
-
-// It‘s always good to credit your work:
-// let renderUser = (user, container) => { // You can have multiple arguments for a function!
-// 	let userAddress =
-// 		`
-// 		<address>
-// 			<img src="${ user.avatar_image.display }">
-// 			<h3>${ user.first_name }</h3>
-// 			<p><a href="https://are.na/${ user.slug }">Are.na profile ↗</a></p>
-// 		</address>
-// 		`
-// 	container.insertAdjacentHTML('beforeend', userAddress)
-// }
-
-// let addScrolling = () => {
-// 	let highlightClass = 'highlight' // Variables again.
-// 	let highlightBlocks = document.querySelectorAll('.block') // Get all of them.
-
-// 	// Loop through the list, doing this `forEach` one.
-// 	highlightBlocks.forEach((block) => {
-// 			let sectionObserver = new IntersectionObserver((entries) => {
-// 				let [entry] = entries;
-
-// 				if (entry.isIntersecting) {
-// 						block.classList.add(highlightClass)
-// 					} else {
-// 						block.classList.remove(highlightClass)
-// 				}
-// 			}, {
-// 				root:document,
-// 				rootMargin: '-33% 0% -0% 0%', // CSS-ish: top/right/bottom/left.
-// 	})
-
-// 	sectionObserver.observe(block) // Watch each one!
-// })
-// }
 
 // Now that we have said what we can do, go get the data:
 fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`,{ cache: 'no-store' })
@@ -237,24 +272,32 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`,{ cache: 'no-store
 		// data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
 		// renderUser(data.user, channelUsers)
 
-		let openButtons = document.querySelectorAll('.block');
+		var openalready = false;
+		let openButtons = document.querySelectorAll('.block .image-button');
 			openButtons.forEach((openButton) => {
 				openButton.onclick = () => {
-					openButton.parentElement.classList.toggle('active')
+					//console.log(openalready);
+					if (!openalready){
+						let blockdescription = openButton.nextElementSibling;						
+						blockdescription.classList.add('active');
+						openalready = true;
+
+						openButton.closest('.block').classList.add('disable-hover');
+					}
+					else{
+					}
 		};
 	})
 
 	let closeButtons = document.querySelectorAll('.block .close-button');
 		closeButtons.forEach((closeButton) =>{
 			closeButton.onclick = () => {
-				let parentBlock = closeButton.closest('.block')
-				parentBlock.classList.toggle('active')
+				let blockdescription =  closeButton;		
+				blockdescription.parentElement.parentElement.classList.remove('active');
+				openalready = false;	
+				
+				closeButton.closest('.block').classList.remove('disable-hover');
 			}
 		})
 
-
-
 	})
-
-
-	

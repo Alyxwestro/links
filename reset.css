@@ -44,6 +44,7 @@
   
   iframe {
     border: unset;
+    min-width: 50%;
   }
   
   ::placeholder {
